@@ -1,13 +1,12 @@
 let faker = require('faker');
 
-function genereteTaks() {
     faker.locale = "nl";
     let tasks = [];
 
     for (let i = 0; i < 30; i++) {
         let today = new Date();
-        let todayplusi = today.setHours(today.getHours() + i)
-        let todayplusi1 = today.setHours(today.getHours() + 1 + i)
+        let todayplusi = new Date(today.setHours(today.getHours() + i))
+        let todayplusi1 = new Date(today.setHours(today.getHours() + 1 + i))
 
         tasks.push({
             "title": faker.lorem.sentence(),
@@ -15,8 +14,8 @@ function genereteTaks() {
             "circumstances": faker.lorem.sentence(),
             "contact_person": faker.name.firstName() + " " + faker.name.lastName(),
             "contact_phone_number": faker.phone.phoneNumber('06#########'),
-            "start_time": todayplusi.toString(),
-            "end_time": todayplusi1.toString(),
+            "start_time": todayplusi,
+            "end_time": todayplusi1,
             "place": faker.address.city(),
             "street": faker.address.streetName(),
             "postal_code": faker.address.zipCode("####-##"),
@@ -34,9 +33,7 @@ function genereteTaks() {
             "notes": ""
         });
     }
-    return {"tasks": tasks}
-}
+   console.log(tasks)
 
-module.exports = genereteTaks
 
 
