@@ -5,11 +5,12 @@ function genTasks() {
     let tasks = [];
 
     for (let i = 0; i < 30; i++) {
-        let today = new Date();
-        let todayplusi = new Date(today.setHours(today.getHours() + i))
-        let todayplusi1 = new Date(today.setHours(today.getHours() + 1 + i))
-        let address = getAddress()
-        let job = getJob()
+        let today1 = new Date();
+        let today2 = new Date();
+        let todayplusi = new Date(today1.setHours(i));
+        let todayplusi1 = new Date(today2.setHours(i + 1));
+        let address = getAddress();
+        let job = getJob();
 
         tasks.push({
             "title": job.title,
@@ -29,7 +30,7 @@ function genTasks() {
                 'max': 10
             }),
             "uuid": faker.random.uuid(),
-            "last_updated": today,
+            "last_updated": today1,
             "notes": ""
         });
     }
@@ -96,6 +97,8 @@ function getJob() {
         'max': jobs.length - 1
     })]
 }
+
+console.log(genTasks())
 
 module.exports = genTasks
 
