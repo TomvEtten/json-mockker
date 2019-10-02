@@ -1,5 +1,6 @@
 let faker = require('faker');
 
+function genTasks() {
     faker.locale = "nl";
     let tasks = [];
 
@@ -33,7 +34,10 @@ let faker = require('faker');
             "notes": ""
         });
     }
-   console.log(tasks)
+   return {"tasks" : tasks}
+}
+
+module.exports(genTasks)
 
 
 
