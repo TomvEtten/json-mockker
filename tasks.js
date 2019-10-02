@@ -29,7 +29,7 @@ let faker = require('faker');
                 'max': 50
             }),
             "uuid": faker.random.uuid(),
-            "last_updated": today.toString(),
+            "last_updated": today,
             "notes": ""
         });
     }
