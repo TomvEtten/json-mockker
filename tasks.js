@@ -37,7 +37,7 @@ function genTasks() {
    return {"tasks" : tasks}
 }
 
-module.exports(genTasks)
+module.exports  = genTasks
 
 
 
