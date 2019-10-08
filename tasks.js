@@ -16,6 +16,7 @@ function genTasks() {
             "title": job.title,
             "description": job.description,
             "circumstances": job.circumstances,
+            "status": faker.random.boolean(),
             "contact_person": faker.name.firstName() + " " + faker.name.lastName(),
             "contact_phone_number": faker.phone.phoneNumber('06#########'),
             "start_time": todayplusi,
