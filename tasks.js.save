@@ -13,7 +13,6 @@ function genTasks() {
         let job = getJob();
 
         tasks.push({
-              "id": faker.random.uuid(),
             "title": job.title,
             "description": job.description,
             "circumstances": job.circumstances,
@@ -31,6 +30,7 @@ function genTasks() {
                 'min': 2,
                 'max': 10
             }),
+            "uuid": faker.random.uuid(),
             "last_updated": today1,
             "notes": ""
         });
@@ -52,7 +52,12 @@ function getAddress() {
             postalCode: "1072 LC",
             houseNumber: 79
         },
-    ];
+        {
+            place: "Utrecht",
+            street: "Lange Viestraat",
+            postalCode: "3511 BK",
+            houseNumber: 2
+        },    ];
     return adresses[faker.random.number({
         'min': 0,
         'max': adresses.length - 1
