@@ -13,7 +13,7 @@ function genTasks() {
         let job = getJob();
 
         tasks.push({
-              "id": faker.random.uuid(),
+            "id": faker.random.uuid(),
             "title": job.title,
             "description": job.description,
             "circumstances": job.circumstances,
@@ -48,9 +48,27 @@ function getAddress() {
         },
         {
             place: "Amsterdam",
-            street: "Ferdinand Bolstraat ",
+            street: "Ferdinand Bolstraat",
             postalCode: "1072 LC",
             houseNumber: 79
+        },
+        {
+            place: "Amsterdam",
+            street: "De Passage",
+            postalCode: "1101 AX",
+            houseNumber: 100
+        },
+        {
+            place: "Hoofddorp",
+            street: "Polderplein",
+            postalCode: "2132 BA",
+            houseNumber: 4
+        },
+        {
+            place: "Amsterdam",
+            street: "Bijlmerplein",
+            postalCode: "1102 DB",
+            houseNumber: 129
         },
     ];
     return adresses[faker.random.number({
@@ -62,29 +80,34 @@ function getAddress() {
 function getJob() {
     let jobs = [
         {
-            title: "Repareren van Attene",
-            description: "De attene op deze locatie is gebroken tijdens de laatste storm, deze moet gerepareert worden. Het gaat om een model van 10 jaar geleden.",
+            title: "Repareren van Antenne",
+            description: "De antenne op deze locatie is gebroken tijdens de laatste storm, deze moet gerepareerd worden. Het gaat om een model van 10 jaar geleden.",
             circumstances: "Er staat veel wind op deze hoge locatie, warm aankleden is aangeraden",
         },
         {
             title: "Aansluiten internet",
             description: "Deze klant heeft net een Ziggo pakket afgenomen, graag deze aansluiten op locatie",
-            circumstances: "Klant heeft een hond die vrij aggresief is",
+            circumstances: "Klant heeft een hond loslopen in de tuin, graag bellen vooraf",
         },
         {
             title: "Ruis op digitale televisie",
-            description: "Klant klaagt al weken lang last te hebben van ruis op de digitale zenders, dit met modem ALEX 16123",
-            circumstances: "Klant is ontevreden over de verleende service van vorige keer",
+            description: "Klant geeft al weken aan lang last te hebben van ruis/korrelig beeld op de digitale zenders, dit met modem ALEX 12345",
+            circumstances: "Klant is ontevreden over de verleende service van vorige keer, de vorige montuer heeft dit probleem niet op kunnen lossen",
         },
         {
             title: "Onderhoud kabelweg",
-            description: "Checken en onderhoud uitvoeren on locatie",
+            description: "Checken en onderhoud uitvoeren op locatie",
             circumstances: "Dichtbij hoofdkantoor",
         },
         {
             title: "Ophalen student voor meerijdag",
-            description: "een hva student de hele dag vermaken en uitleggen over dagelijkse bezigheden.",
-            circumstances: "hva studenten zijn energiek",
+            description: "een HVA student uitleggen over dagelijkse bezigheden.",
+            circumstances: "HVA studenten zijn over het algemeen vrij energiek",
+        },
+        {
+            title: "MKB storing in intern netwerk",
+            description: "MKD Sons Of Ziggo hebben een storing in het interne netwerk, klant heeft MKB pakket en dus prio",
+            circumstances: "Graag de storing oplossen ook al gaan we over de standaard werktijd heen",
         }
     ];
     return jobs[faker.random.number({
