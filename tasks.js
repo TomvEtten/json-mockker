@@ -27,6 +27,7 @@ function genTasks() {
             "postal_code": address.postalCode,
             "house_number": address.houseNumber,
             "country": "Netherlands",
+	   "status_info": "[]",
             "engineer_id": faker.random.number({
                 'min': 2,
                 'max': 10
